@@ -151,7 +151,7 @@
 // ############# Heated bed configuration ########################
 
 #define HAVE_HEATED_BED 1
-#define HEATED_BED_MAX_TEMP 120
+#define HEATED_BED_MAX_TEMP 140
 #define SKIP_M190_IF_WITHIN 3
 #define HEATED_BED_SENSOR_TYPE 1
 #define HEATED_BED_SENSOR_PIN TEMP_1_PIN
@@ -397,7 +397,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define UI_SERVO_CONTROL 0
 #define FAN_KICKSTART_TIME  200
 
-        #define FEATURE_WATCHDOG 0
+        #define FEATURE_WATCHDOG 1
 
 // #################### Z-Probing #####################
 
@@ -475,7 +475,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define LANGUAGE_PL_ACTIVE 0
 #define LANGUAGE_TR_ACTIVE 0
 #define UI_PRINTER_NAME "P802_8_V1.5"
-#define UI_PRINTER_COMPANY "Zonestar 3D printer"
+#define UI_PRINTER_COMPANY "Anet A8-B 3D printer"
 #define UI_PAGES_DURATION 4000
 #define UI_ANIMATION 0
 #define UI_SPEEDDEPENDENT_POSITIONING 0
@@ -491,7 +491,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define FEATURE_BEEPER 0
 #define CASE_LIGHTS_PIN -1
 #define CASE_LIGHT_DEFAULT_ON 1
-#define UI_START_SCREEN_DELAY 3000
+#define UI_START_SCREEN_DELAY 5000
 #define UI_DYNAMIC_ENCODER_SPEED 1
         /**
 Beeper sound definitions for short beeps during key actions
@@ -503,7 +503,7 @@ Values must be in range 1..255
 #define BEEPER_LONG_SEQUENCE 8,8
 #define UI_SET_PRESET_HEATED_BED_TEMP_PLA 60
 #define UI_SET_PRESET_EXTRUDER_TEMP_PLA   190
-#define UI_SET_PRESET_HEATED_BED_TEMP_ABS 110
+#define UI_SET_PRESET_HEATED_BED_TEMP_ABS 120
 #define UI_SET_PRESET_EXTRUDER_TEMP_ABS   240
 #define UI_SET_MIN_HEATED_BED_TEMP  30
 #define UI_SET_MAX_HEATED_BED_TEMP 120
@@ -740,14 +740,14 @@ Values must be in range 1..255
     "servo1Pin": -1,
     "servo2Pin": -1,
     "servo3Pin": -1,
-    "featureWatchdog": "0",
+    "featureWatchdog": "1",
     "hasHeatedBed": "1",
     "enableZProbing": "0",
     "extrudeMaxLength": 160,
     "homeOrder": "HOME_ORDER_XYZ",
     "featureController": 24,
     "uiPrinterName": "P802_8_V1.5",
-    "uiPrinterCompany": "Zonestar 3D printer",
+    "uiPrinterCompany": "Anet A8-B 3D printer",
     "uiPagesDuration": 4000,
     "uiAnimation": "0",
     "uiDisablePageswitch": "1",
@@ -761,7 +761,7 @@ Values must be in range 1..255
     "uiKeyMinRepeat": 50,
     "featureBeeper": "0",
     "uiPresetBedTempPLA": 60,
-    "uiPresetBedABS": 110,
+    "uiPresetBedABS": 120,
     "uiPresetExtruderPLA": 190,
     "uiPresetExtruderABS": 240,
     "uiMinHeatedBed": 30,
@@ -771,7 +771,7 @@ Values must be in range 1..255
     "uiExtruderFeedrate": 2,
     "uiExtruderRetractDistance": 3,
     "uiSpeeddependentPositioning": "0",
-    "maxBedTemperature": 120,
+    "maxBedTemperature": 140,
     "bedSensorType": 1,
     "bedSensorPin": "TEMP_1_PIN",
     "bedHeaterPin": 12,
@@ -874,7 +874,7 @@ Values must be in range 1..255
     "sdSupport": "0",
     "sdCardDetectPin": -1,
     "sdCardDetectInverted": "0",
-    "uiStartScreenDelay": 3000,
+    "uiStartScreenDelay": 5000,
     "xEndstopBackMove": 5,
     "yEndstopBackMove": 5,
     "zEndstopBackMove": 2,
