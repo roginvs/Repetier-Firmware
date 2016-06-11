@@ -475,7 +475,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define LANGUAGE_PL_ACTIVE 0
 #define LANGUAGE_TR_ACTIVE 0
 #define UI_PRINTER_NAME "P802_8_V1.5"
-#define UI_PRINTER_COMPANY "Anet A8-B 3D printer"
+#define UI_PRINTER_COMPANY "Rogin 3D printer"
 #define UI_PAGES_DURATION 4000
 #define UI_ANIMATION 0
 #define UI_SPEEDDEPENDENT_POSITIONING 0
@@ -747,7 +747,7 @@ Values must be in range 1..255
     "homeOrder": "HOME_ORDER_XYZ",
     "featureController": 24,
     "uiPrinterName": "P802_8_V1.5",
-    "uiPrinterCompany": "Anet A8-B 3D printer",
+    "uiPrinterCompany": "Rogin 3D printer",
     "uiPagesDuration": 4000,
     "uiAnimation": "0",
     "uiDisablePageswitch": "1",
