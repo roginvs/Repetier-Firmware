@@ -1972,17 +1972,21 @@ void uiCheckSlowKeys(uint16_t &action) {}
 //   #define UI_DISPLAY_DATA_PIN    29
 //   #define UI_DISPLAY_CLOCK_PIN   28
 //   #define UI_DISPLAY_ENABLE_PIN  -1 // for 2-wire or pin number for 3-wire
-#ifndef UI_DISPLAY_TYPE
-#define UI_DISPLAY_TYPE          DISPLAY_4BIT
+// #ifndef UI_DISPLAY_TYPE
+#define UI_DISPLAY_TYPE        DISPLAY_SR
+#define UI_DISPLAY_DATA_PIN    28
+#define UI_DISPLAY_CLOCK_PIN   27
+#define UI_DISPLAY_ENABLE_PIN  29
 
-#define UI_DISPLAY_ENABLE_PIN    29    // A2
-#define UI_DISPLAY_RS_PIN        28    // A3
-#define UI_DISPLAY_RW_PIN        -1
-#define UI_DISPLAY_D4_PIN        10
-#define UI_DISPLAY_D5_PIN        11
-#define UI_DISPLAY_D6_PIN        16
-#define UI_DISPLAY_D7_PIN        17
-#endif
+//#define UI_DISPLAY_TYPE          DISPLAY_4BIT
+// #define UI_DISPLAY_ENABLE_PIN    29    // A2
+// #define UI_DISPLAY_RS_PIN        28    // A3
+// #define UI_DISPLAY_RW_PIN        -1
+// #define UI_DISPLAY_D4_PIN        10
+// #define UI_DISPLAY_D5_PIN        11
+// #define UI_DISPLAY_D6_PIN        16
+// #define UI_DISPLAY_D7_PIN        17
+// #endif
 
 #define UI_DISPLAY_CHARSET       1
 #define UI_COLS                  20
