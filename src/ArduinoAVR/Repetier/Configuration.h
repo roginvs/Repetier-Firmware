@@ -399,7 +399,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define SERVO1_PIN -1
 #define SERVO2_PIN -1
 #define SERVO3_PIN -1
-#define SERVO0_NEUTRAL_POS  -1
+#define SERVO0_NEUTRAL_POS  2200
 #define SERVO1_NEUTRAL_POS  -1
 #define SERVO2_NEUTRAL_POS  -1
 #define SERVO3_NEUTRAL_POS  -1
