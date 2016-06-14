@@ -326,8 +326,8 @@ It also can add a delay to wait for spindle to run on full speed.
 #define ZHOME_MIN_TEMPERATURE 0
 #define ZHOME_HEAT_ALL 1
 #define ZHOME_HEAT_HEIGHT 20
-#define ZHOME_X_POS 999999
-#define ZHOME_Y_POS 999999
+#define ZHOME_X_POS 0
+#define ZHOME_Y_POS 0
 #define ENABLE_BACKLASH_COMPENSATION 0
 #define X_BACKLASH 0
 #define Y_BACKLASH 0
@@ -394,8 +394,8 @@ M340 P<servoId> S<pulseInUS>   / ServoID = 0..3  pulseInUs = 500..2500
 Servos are controlled by a pulse width normally between 500 and 2500 with 1500ms in center position. 0 turns servo off.
 WARNING: Servos can draw a considerable amount of current. Make sure your system can handle this or you may risk your hardware!
 */
-#define FEATURE_SERVO 0
-#define SERVO0_PIN -1
+#define FEATURE_SERVO 1
+#define SERVO0_PIN 17
 #define SERVO1_PIN -1
 #define SERVO2_PIN -1
 #define SERVO3_PIN -1
@@ -413,21 +413,21 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_Z_OFFSET 0
 #define Z_PROBE_Z_OFFSET_MODE 0
 #define UI_BED_COATING 1
-#define FEATURE_Z_PROBE 0
-#define Z_PROBE_BED_DISTANCE 10
-#define Z_PROBE_PIN -1
-#define Z_PROBE_PULLUP 0
+#define FEATURE_Z_PROBE 1
+#define Z_PROBE_BED_DISTANCE 30
+#define Z_PROBE_PIN 10
+#define Z_PROBE_PULLUP 1
 #define Z_PROBE_ON_HIGH 0
-#define Z_PROBE_X_OFFSET 0
-#define Z_PROBE_Y_OFFSET 0
+#define Z_PROBE_X_OFFSET -10
+#define Z_PROBE_Y_OFFSET -55
 #define Z_PROBE_WAIT_BEFORE_TEST 0
 #define Z_PROBE_SPEED 2
 #define Z_PROBE_XY_SPEED 150
-#define Z_PROBE_SWITCHING_DISTANCE 1
-#define Z_PROBE_REPETITIONS 1
-#define Z_PROBE_HEIGHT 40
-#define Z_PROBE_START_SCRIPT ""
-#define Z_PROBE_FINISHED_SCRIPT ""
+#define Z_PROBE_SWITCHING_DISTANCE 3
+#define Z_PROBE_REPETITIONS 3
+#define Z_PROBE_HEIGHT 9.1
+#define Z_PROBE_START_SCRIPT "M340 P0 S1300 R1000"
+#define Z_PROBE_FINISHED_SCRIPT "M340 P0 S2200 R1000"
 #define Z_PROBE_REQUIRES_HEATING 0
 #define Z_PROBE_MIN_TEMPERATURE 150
 #define FEATURE_AUTOLEVEL 1
@@ -437,9 +437,9 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_Y2 20
 #define Z_PROBE_X3 100
 #define Z_PROBE_Y3 160
-#define BED_LEVELING_METHOD 0
+#define BED_LEVELING_METHOD 1
 #define BED_CORRECTION_METHOD 0
-#define BED_LEVELING_GRID_SIZE 5
+#define BED_LEVELING_GRID_SIZE 3
 #define BED_LEVELING_REPETITIONS 5
 #define BED_MOTOR_1_X 0
 #define BED_MOTOR_1_Y 0
