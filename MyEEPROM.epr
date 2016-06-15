@@ -41,7 +41,7 @@
 	<epr pos="820" type="3" value="20.000">Z-probe Y1</epr>
 	<epr pos="824" type="3" value="160.000">Z-probe X2</epr>
 	<epr pos="828" type="3" value="20.000">Z-probe Y2</epr>
-	<epr pos="832" type="3" value="100.000">Z-probe X3</epr>
+	<epr pos="832" type="3" value="160.000">Z-probe X3</epr>
 	<epr pos="836" type="3" value="160.000">Z-probe Y3</epr>
 	<epr pos="1036" type="3" value="0.000">Z-probe bending correction A</epr>
 	<epr pos="1040" type="3" value="0.000">Z-probe bending correction B</epr>
