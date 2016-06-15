@@ -411,7 +411,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 // #################### Z-Probing #####################
 
 #define Z_PROBE_Z_OFFSET 0
-#define Z_PROBE_Z_OFFSET_MODE 0
+#define Z_PROBE_Z_OFFSET_MODE 1
 #define UI_BED_COATING 1
 #define FEATURE_Z_PROBE 1
 #define Z_PROBE_BED_DISTANCE 30
@@ -435,9 +435,9 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_Y1 20
 #define Z_PROBE_X2 160
 #define Z_PROBE_Y2 20
-#define Z_PROBE_X3 160
+#define Z_PROBE_X3 100
 #define Z_PROBE_Y3 160
-#define BED_LEVELING_METHOD 1
+#define BED_LEVELING_METHOD 0
 #define BED_CORRECTION_METHOD 0
 #define BED_LEVELING_GRID_SIZE 3
 #define BED_LEVELING_REPETITIONS 5
