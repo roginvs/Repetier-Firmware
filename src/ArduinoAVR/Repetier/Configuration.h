@@ -280,11 +280,11 @@ It also can add a delay to wait for spindle to run on full speed.
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
-#define X_MAX_LENGTH 245
-#define Y_MAX_LENGTH 210
+#define X_MAX_LENGTH 243
+#define Y_MAX_LENGTH 217
 #define Z_MAX_LENGTH 230
-#define X_MIN_POS -38
-#define Y_MIN_POS -7
+#define X_MIN_POS -43
+#define Y_MIN_POS -17
 #define Z_MIN_POS 0
 #define DISTORTION_CORRECTION 0
 #define DISTORTION_CORRECTION_POINTS 5
