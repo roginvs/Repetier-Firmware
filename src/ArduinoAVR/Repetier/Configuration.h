@@ -65,7 +65,7 @@
 #define DRIVE_SYSTEM 0
 #define XAXIS_STEPS_PER_MM 100
 #define YAXIS_STEPS_PER_MM 100
-#define ZAXIS_STEPS_PER_MM 1600
+#define ZAXIS_STEPS_PER_MM 400
 #define EXTRUDER_FAN_COOL_TEMP 50
 #define PDM_FOR_EXTRUDER 0
 #define PDM_FOR_COOLER 0
@@ -345,7 +345,7 @@ It also can add a delay to wait for spindle to run on full speed.
 #define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 2000
 #define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Z 100
 #define INTERPOLATE_ACCELERATION_WITH_Z 1
-#define ACCELERATION_FACTOR_TOP 50
+#define ACCELERATION_FACTOR_TOP 0
 #define MAX_JERK 20
 #define MAX_ZJERK 0.3
 #define PRINTLINE_CACHE_SIZE 16
@@ -414,7 +414,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_Z_OFFSET_MODE 1
 #define UI_BED_COATING 1
 #define FEATURE_Z_PROBE 1
-#define Z_PROBE_BED_DISTANCE 30
+#define Z_PROBE_BED_DISTANCE 20
 #define Z_PROBE_PIN 10
 #define Z_PROBE_PULLUP 1
 #define Z_PROBE_ON_HIGH 0
@@ -425,7 +425,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_XY_SPEED 150
 #define Z_PROBE_SWITCHING_DISTANCE 3
 #define Z_PROBE_REPETITIONS 3
-#define Z_PROBE_HEIGHT 9.1
+#define Z_PROBE_HEIGHT 10.1
 #define Z_PROBE_START_SCRIPT "M340 P0 S1300 R1000"
 #define Z_PROBE_FINISHED_SCRIPT "M340 P0 S2200 R1000"
 #define Z_PROBE_REQUIRES_HEATING 0
