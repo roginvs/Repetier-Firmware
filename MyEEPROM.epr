@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Repetier-Firmware-EEPROM>
 	<epr pos="1028" type="0" value="0">Language</epr>
-	<epr pos="75" type="2" value="57600">Baudrate</epr>
-	<epr pos="129" type="3" value="97.389">Filament printed [m]</epr>
-	<epr pos="125" type="2" value="198311">Printer active [s]</epr>
+	<epr pos="75" type="2" value="115200">Baudrate</epr>
+	<epr pos="129" type="3" value="0.000">Filament printed [m]</epr>
+	<epr pos="125" type="2" value="0">Printer active [s]</epr>
 	<epr pos="79" type="2" value="0">Max. inactive time [ms,0=off]</epr>
 	<epr pos="83" type="2" value="360000">Stop stepper after inactivity [ms,0=off]</epr>
 	<epr pos="3" type="3" value="100.0000">X-axis steps per mm</epr>
@@ -46,7 +46,7 @@
 	<epr pos="1036" type="3" value="0.000">Z-probe bending correction A [mm]</epr>
 	<epr pos="1040" type="3" value="0.000">Z-probe bending correction B [mm]</epr>
 	<epr pos="1044" type="3" value="0.000">Z-probe bending correction C [mm]</epr>
-	<epr pos="880" type="0" value="1">Autolevel active (1/0)</epr>
+	<epr pos="880" type="0" value="0">Autolevel active (1/0)</epr>
 	<epr pos="106" type="0" value="2">Bed Heat Manager [0-3]</epr>
 	<epr pos="107" type="0" value="255">Bed PID drive max</epr>
 	<epr pos="124" type="0" value="80">Bed PID drive min</epr>
