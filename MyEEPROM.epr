@@ -31,7 +31,7 @@
 	<epr pos="71" type="3" value="100.000">Z-axis travel acceleration [mm/s^2]</epr>
 	<epr pos="1032" type="3" value="0.000">Acceleration factor at top [%,100=like bottom]</epr>
 	<epr pos="1024" type="3" value="0.000">Coating thickness [mm]</epr>
-	<epr pos="808" type="3" value="10.100">Z-probe height [mm]</epr>
+	<epr pos="808" type="3" value="8.700">Z-probe height [mm]</epr>
 	<epr pos="929" type="3" value="20.000">Max. z-probe - bed dist. [mm]</epr>
 	<epr pos="812" type="3" value="2.000">Z-probe speed [mm/s]</epr>
 	<epr pos="840" type="3" value="150.000">Z-probe x-y-speed [mm/s]</epr>
