@@ -319,7 +319,8 @@ bool runBedLeveling(GCode *com) {
         correctAutolevel(com,plane);
 
         // Leveling is finished now update own positions and store leveling data if needed
-        float currentZ = plane.z((float)Printer::currentPositionSteps[X_AXIS] * Printer::invAxisStepsPerMM[X_AXIS],(float)Printer::currentPositionSteps[Y_AXIS] * Printer::invAxisStepsPerMM[Y_AXIS]);
+        //float currentZ = plane.z((float)Printer::currentPositionSteps[X_AXIS] * Printer::invAxisStepsPerMM[X_AXIS],(float)Printer::currentPositionSteps[Y_AXIS] * Printer::invAxisStepsPerMM[Y_AXIS]);
+		float currentZ = plane.z((float)0,(float)0);
         Com::printF(PSTR("CurrentZ:"),currentZ);
         Com::printFLN(PSTR(" atZ:"),Printer::currentPosition[Z_AXIS]);
         // With max z endstop we adjust zlength so after next homing we have also a calibrated printer
