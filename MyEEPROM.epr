@@ -2,8 +2,8 @@
 <Repetier-Firmware-EEPROM>
 	<epr pos="1028" type="0" value="0">Language</epr>
 	<epr pos="75" type="2" value="115200">Baudrate</epr>
-	<epr pos="129" type="3" value="0.000">Filament printed [m]</epr>
-	<epr pos="125" type="2" value="0">Printer active [s]</epr>
+	<epr pos="129" type="3" value="12.605">Filament printed [m]</epr>
+	<epr pos="125" type="2" value="26090">Printer active [s]</epr>
 	<epr pos="79" type="2" value="0">Max. inactive time [ms,0=off]</epr>
 	<epr pos="83" type="2" value="360000">Stop stepper after inactivity [ms,0=off]</epr>
 	<epr pos="3" type="3" value="100.0000">X-axis steps per mm</epr>
