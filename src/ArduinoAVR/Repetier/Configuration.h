@@ -406,7 +406,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define UI_SERVO_CONTROL 1
 #define FAN_KICKSTART_TIME  200
 
-        #define FEATURE_WATCHDOG 1
+        #define FEATURE_WATCHDOG 0
 
 // #################### Z-Probing #####################
 
