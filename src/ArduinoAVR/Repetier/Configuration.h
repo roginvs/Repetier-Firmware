@@ -425,7 +425,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_XY_SPEED 150
 #define Z_PROBE_SWITCHING_DISTANCE 3
 #define Z_PROBE_REPETITIONS 3
-#define Z_PROBE_HEIGHT 10.1
+#define Z_PROBE_HEIGHT 8.750
 #define Z_PROBE_START_SCRIPT "M340 P0 S1300 R1000"
 #define Z_PROBE_FINISHED_SCRIPT "M340 P0 S2200 R1000"
 #define Z_PROBE_REQUIRES_HEATING 0
