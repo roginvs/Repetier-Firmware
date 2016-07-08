@@ -278,13 +278,13 @@ void Extruder::manageTemperatures()
             else if(act->heatManager == HTR_DEADTIME)     // dead-time control
             {
                 act->startHoldDecouple(time);
-                float raising = 3.333 * (act->currentTemperatureC - act->tempArray[act->tempPointer]); // raising dT/dt, 3.33 = reciproke of time interval (300 ms)
+                float raising = 3.333 * (act->currentTemperatureC - act->tempArray[act->tempPointer]); // raising dT/dt, 3.33 = reciprocal of time interval (300 ms)
                 act->tempIState = 0.25 * (3.0 * act->tempIState + raising); // damp raising
                 output = (act->currentTemperatureC + act->tempIState * act->deadTime > act->targetTemperatureC ? 0 : act->pidDriveMax);
             }
             else // bang bang and slow bang bang
 #endif // TEMP_PID
-                if(act->heatManager == HTR_SLOWBANG)    // Bang-bang with reduced change frequency to save relais life
+                if(act->heatManager == HTR_SLOWBANG)    // Bang-bang with reduced change frequency to save relays life
                 {
                     if (time - act->lastTemperatureUpdate > HEATED_BED_SET_INTERVAL)
                     {
@@ -421,6 +421,7 @@ void TemperatureController::resetAllErrorStates() {
 		tempController[i]->removeErrorStates();
 	}
 #endif	
+	Printer::unsetAnyTempsensorDefect();
 }
 
 #if EXTRUDER_JAM_CONTROL
@@ -846,6 +847,7 @@ void Extruder::setTemperatureForExtruder(float temperatureInCelsius, uint8_t ext
         uint8_t retracted = 0;
 #endif
         millis_t currentTime;
+		millis_t maxWaitUntil = 0;
         do
         {
             previousMillisCmd = currentTime = HAL::timeInMilliseconds();
@@ -864,16 +866,23 @@ void Extruder::setTemperatureForExtruder(float temperatureInCelsius, uint8_t ext
                 retracted = 1;
             }
 #endif
+			if(maxWaitUntil == 0) {
+				if(dirRising ? actExtruder->tempControl.currentTemperatureC >= actExtruder->tempControl.targetTemperatureC - 5 : actExtruder->tempControl.currentTemperatureC <= actExtruder->tempControl.targetTemperatureC + 5) {
+					maxWaitUntil = currentTime + 120000L;
+				}
+			} else if((millis_t)(maxWaitUntil - currentTime) < 2000000000UL) {
+				break;
+			}
             if((waituntil == 0 &&
                     (dirRising ? actExtruder->tempControl.currentTemperatureC >= actExtruder->tempControl.targetTemperatureC - 1
                      : actExtruder->tempControl.currentTemperatureC <= actExtruder->tempControl.targetTemperatureC + 1))
-#if defined(TEMP_HYSTERESIS) && TEMP_HYSTERESIS>=1
+#if defined(TEMP_HYSTERESIS) && TEMP_HYSTERESIS >= 1
                     || (waituntil != 0 && (abs(actExtruder->tempControl.currentTemperatureC - actExtruder->tempControl.targetTemperatureC)) > TEMP_HYSTERESIS)
 #endif
               )
             {
                 waituntil = currentTime + 1000UL*(millis_t)actExtruder->watchPeriod; // now wait for temp. to stabilize
-            }
+            }			
         }
         while(waituntil == 0 || (waituntil != 0 && (millis_t)(waituntil - currentTime) < 2000000000UL));
 #if RETRACT_DURING_HEATUP
@@ -2414,10 +2423,11 @@ bool reportTempsensorError()
     if(!Printer::isAnyTempsensorDefect()) return false;
     for(uint8_t i = 0; i < NUM_TEMPERATURE_LOOPS; i++)
     {
-        if(i == NUM_EXTRUDER) Com::printF(Com::tHeatedBed);
-#if HAVE_HEATED_BED		
-        else if(i == HEATED_BED_INDEX) Com::printF(Com::tExtruderSpace,i);
-#endif		
+#if HAVE_HEATED_BED
+        if(i == HEATED_BED_INDEX) Com::printF(Com::tHeatedBed);
+        else 
+#endif
+		if(i < NUM_EXTRUDER) Com::printF(Com::tExtruderSpace,i);
 		else Com::printF(PSTR("Other:"));
 		TemperatureController *act = tempController[i];
         int temp = act->currentTemperatureC;

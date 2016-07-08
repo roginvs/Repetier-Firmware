@@ -934,7 +934,7 @@ void Commands::processGCode(GCode *com) {
             }
             break;
 #if FEATURE_RETRACTION && NUM_EXTRUDER > 0
-        case 10: // G10 S<1 = long retract, 0 = short retract = default> retracts filament accoriding to stored setting
+        case 10: // G10 S<1 = long retract, 0 = short retract = default> retracts filament according to stored setting
 #if NUM_EXTRUDER > 1
             Extruder::current->retract(true, com->hasS() && com->S > 0);
 #else
@@ -1222,7 +1222,7 @@ void Commands::processGCode(GCode *com) {
                             if(Printer::isLargeMachine()) {
                                 // calculate radius assuming we are at surface
                                 // If Z is greater than 0 it will get calculated out for correct radius
-                                // Use either A or B tower as they acnhor x cartesian axis and always have
+                                // Use either A or B tower as they anchor x Cartesian axis and always have
                                 // Radius distance to center in simplest set up.
                                 float h = Printer::deltaDiagonalStepsSquaredB.f;
                                 unsigned long bSteps = Printer::currentNonlinearPositionSteps[B_TOWER];
@@ -1806,6 +1806,11 @@ void Commands::processMCode(GCode *com) {
             break;
         case 114: // M114
             printCurrentPosition(PSTR("M114 "));
+			if(com->hasS() && com->S) {
+				Com::printF(PSTR("XS:"),Printer::currentPositionSteps[X_AXIS]);
+				Com::printF(PSTR(" YS:"),Printer::currentPositionSteps[Y_AXIS]);
+				Com::printFLN(PSTR(" ZS:"),Printer::currentPositionSteps[Z_AXIS]);
+			}
             break;
         case 117: // M117 message to lcd
             if(com->hasString()) {
@@ -2054,7 +2059,7 @@ void Commands::processMCode(GCode *com) {
             }
             break;
 #endif
-        case 302: // M302 S<0 or 1> - allow cold extrusion. Without S parameter it will allow. S1 will disallow.
+        case 302: // M302 S<0 or 1> - allow cold extrusion. Without S parameter it will allow. S1 will allow, S0 will disallow.
             Printer::setColdExtrusionAllowed(!com->hasS() || (com->hasS() && com->S != 0));
             break;
         case 303: { // M303
